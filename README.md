@@ -66,7 +66,7 @@ __Step 2__: Pull and Run the image
 > Note: nevishs/docker-svn -> repo name, svnserver -> repo id
 ```
 > docker pull nevishs/docker-svn
-> docker run --name svnserver -d -p 80:80 -p 3960:3960 -v /tmp/Docker-SVN/repos:/var/svn svn-server
+> docker run --name svnserver -d -p 80:80 -p 3960:3960 -v /tmp/Docker-SVN/repos:/var/svn nevishs/docker-svn
 > docker exec -t svnserver htpasswd -b /etc/subversion/passwd admin pass
 > docker exec -it svnserver svnadmin create /var/svn/new-repo
 > http://127.0.0.1/svn/new-repo/
