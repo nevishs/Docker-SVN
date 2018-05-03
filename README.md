@@ -28,7 +28,7 @@ __Step 2__: Build the image
 ```
 
 __Step 3__: Create the container
-> Note: svnserver -> image name, svn-server -> repo name, /tmp/Docker-SVN/repos -> web files
+> Note: svnserver -> container name, svn-server -> repo name, /tmp/Docker-SVN/repos -> web files
 ```
 > docker run --name svnserver -d -p 80:80 -p 3960:3960 -v /tmp/Docker-SVN/repos:/var/svn svn-server
 ```
@@ -63,7 +63,7 @@ __Step 1__: Prepare the files
 ```
 
 __Step 2__: Pull and Run the image
-> Note: nevishs/docker-svn -> repo name, svnserver -> repo id
+> Note: nevishs/docker-svn -> repo name, svnserver -> container name
 ```
 > docker pull nevishs/docker-svn
 > docker run --name svnserver -d -p 80:80 -p 3960:3960 -v /tmp/Docker-SVN/repos:/var/svn nevishs/docker-svn
@@ -75,10 +75,9 @@ __Step 2__: Pull and Run the image
 
 ## Useful Commands:
 ```
-> docker image ls                         //lists all the images, this command is useful to find the repo name and image id
-> docker container ps -a                  //lists all the containers
-> docker stop CONTAINERID                 //stops the container
-> docker rm CONTAINERID                   //destroys the container
-> svn info svn://localhost:3960/new-repo  //check the repositories
+> docker image ls            //lists all the images, this command is useful to find the repo name and image id
+> docker container ps -a     //lists all the containers
+> docker stop CONTAINERID    //stops the container
+> docker rm CONTAINERID      //destroys the container
 ```
 
