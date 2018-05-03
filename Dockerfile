@@ -13,9 +13,9 @@ RUN apk add --no-cache apache2 apache2-utils apache2-webdav mod_dav_svn &&\
         touch /etc/subversion/passwd
 
 # Add WebDav configuration
-ADD vh-davsvn.conf /etc/apache2/conf.d/vh-davsvn.conf
+ADD /configs/vh-davsvn.conf /etc/apache2/conf.d/vh-davsvn.conf
 
-ADD run.sh /
+ADD /configs/run.sh /
 RUN chmod +x /run.sh
 EXPOSE 80 443 3960
 
